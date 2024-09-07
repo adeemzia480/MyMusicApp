@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Music App</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+  </head>
+  <body>
+    <div id="container-2">
+      <nav>
+        <i id="barsIcon" class="fa-solid fa-bars"></i>
+        <input type="text" id="search-bar" placeholder="Search" />
+        <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
+      </nav>
+
+      <div class="addSongAnimation">
+        <img id="animatedImg" src="images/PleaseUploadSong.gif" alt="add-song-animation">
+      </div>
+
+      <div class="bars-toggle-wrap">
+        <div class="sort">
+          <p>Sort by Names</p>
+          <i id='sortIcon' class="fa-solid fa-sort"></i>
+        </div>
+        <div class="add-song">
+          <p>Add new Song</p>
+          <label for="audio-upload" class="upload-label" id="fileInput">
+            <i class="fa-solid fa-circle-plus"></i>
+          </label>
+          <input
+            type="file"
+            id="audio-upload"
+            accept="audio/*"
+            style="display: none"
+          />
+        </div>
+      </div>
+
+      <div class="song-list">
+        <ul>
+        </ul>
+      </div>
+
+    </div>
+
+    <div id="container-1" class="hidden" >
+      <nav>
+        <i onclick="showContainer2()" class="fa-solid fa-angle-left"></i>
+        <i id="notificationIcon" class="fa-solid fa-bell"></i>
+      </nav>
+
+      <div class="notification-box">
+        <p>No notification yet !</p>
+      </div>
+
+      <div class="song-details">
+        <div class="song-thumbnail">
+          <img id="song-thumbnail" src="images/default-img.jfif" alt="Song-thumbnail" />
+        </div>
+        <h1 id="songName">Song name</h1>
+        <div class="songMetaData">
+          <p id="artistNanme">Artist</p><p>-</p><p id="songAlbum">Album</p>
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <audio id="song">
+          <source
+            src=""
+            type="audio/mpeg"
+          />
+        </audio>
+        <input type="range" value="0" id="progress" />
+        <div class="song-timer">
+          <p>00:00</p>
+          <p>00:00</p>
+        </div>
+      </div>
+
+      <div class="control-icons">
+        <div onclick='previousSongPlay()'><i class="fa-solid fa-backward"></i></div>
+        <div onclick='playAndPause()'><i id="ctrlIcon" class="fa-solid fa-play"></i></div>
+        <div onclick='nextSong()'><i class="fa-solid fa-forward"></i></div>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a10f81eae2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js" integrity="sha512-YsR46MmyChktsyMMou+Bs74oCa/CDdwft7rJ5wlnmDzMj1mzqncsfJamEEf99Nk7IB0JpTMo5hS8rxB49FUktQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    
+  </body>
+</html>
